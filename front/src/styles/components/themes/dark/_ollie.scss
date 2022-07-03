@@ -1,0 +1,71 @@
+body:not(.theme-light) {
+    .options-select {
+        border: 1px solid rgba($white, 0.1);
+
+        & .check {
+            border: 1.5px solid rgba($white, 0.1);
+        }
+
+        &.is-active {
+            & p {
+                color: $white;
+            }
+        }
+    }
+
+    .mission-item {
+        background-repeat: no-repeat;
+        min-height: 208px;
+        background-size: 100% 100%;
+        background-color: #212023;
+    }
+
+    .ollie-card {
+        &-title {
+            @include max-w-sm {
+                border-bottom: none;
+            }
+            color: $white;
+            border-bottom: 1px solid rgba($white, 0.1);
+
+            &.collection-title {
+                @include max-w-sm {
+                    border-left: none;
+                }
+                border-left: 1px solid rgba($white, 0.1);
+            }
+
+            &.right-round {
+                @include max-w-sm {
+                    border-right: none;
+                }
+                border-right: 1px solid rgba($white, 0.1);
+            }
+        }
+
+        &__pic {
+            &:hover {
+                @include max-w-xs {
+                    border-color: rgba($white, 0.1);
+                    box-shadow: inset 0 0 50px rgba($white, 0.8);
+                }
+            }
+        }
+
+        &-category {
+            border: 1px solid rgba($white, 0.1);
+            border-right: 1px solid rgba($white, 0.1);
+            background: $dark-100;
+
+            &-mission-title {
+                color: $white;
+            }
+
+            &.category {
+                @include max-w-sm {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

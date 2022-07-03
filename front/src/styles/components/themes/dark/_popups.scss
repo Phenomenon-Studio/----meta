@@ -1,0 +1,21 @@
+body:not(.theme-light) {
+    & .popup {
+        &__wrap {
+            background-color: rgba($dark-100, 0.95);
+            box-shadow: inset 0 0 34px rgba($white, 0.4);
+        }
+
+        &__close {
+            & > svg {
+                stroke: $white;
+            }
+
+            &:hover,
+            &:active {
+                & > svg {
+                    stroke: $magenta-100;
+                }
+            }
+        }
+    }
+}

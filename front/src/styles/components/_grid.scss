@@ -1,0 +1,82 @@
+.grid {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+
+    &__holder {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    &__btn {
+        @include max-w-sm {
+            grid-column: span 2;
+            grid-row: span 1;
+            order: 3;
+        }
+    }
+}
+
+.two-items {
+    @include min-w-md {
+        grid-column-gap: 1.5em;
+        grid-row-gap: 1.5em;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    // grid-row-gap: 2.5em;
+    grid-row-gap: 3em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    &--sm-reverse {
+        @include max-w-sm {
+            & > * {
+                &:first-child {
+                    order: 2;
+                }
+            }
+        }
+    }
+
+    &--sm-gap-30 {
+        @include max-w-sm {
+            grid-row-gap: 1.875em;
+        }
+    }
+
+    &--sm-gap-40 {
+        @include max-w-sm {
+            grid-row-gap: 2.5em;
+        }
+    }
+
+    &--sm-gap-20 {
+        @include max-w-sm {
+            grid-row-gap: 1.25em;
+        }
+    }
+}
+
+.two-items-secondary {
+    @include min-w-md {
+        grid-column-gap: 2.5em;
+        grid-row-gap: 2.5em;
+    }
+    @include max-w-xs {
+        grid-column-gap: 0;
+        grid-row-gap: 15px;
+        grid-template-columns: 1fr;
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-rows: auto;
+}

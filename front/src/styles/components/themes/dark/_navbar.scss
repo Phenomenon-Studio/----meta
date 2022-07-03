@@ -1,0 +1,59 @@
+body:not(.theme-light) {
+    .navbar {
+        &__nav {
+            @include max-w-md {
+                background-color: $dark-100;
+            }
+
+            & li {
+                & > a {
+                    @include max-w-md {
+                        color: $white;
+                    }
+
+                    &:hover,
+                    &:active {
+                        color: $magenta-100;
+                    }
+                }
+
+                &.current_page_item,
+                &.current-menu-item,
+                &.current-menu-parent {
+                    &:not(:hover),
+                    &:not(:active) {
+                        & > a {
+                            color: $magenta-100;
+                        }
+                    }
+                }
+            }
+
+            .sub-menu {
+                @include min-w-lg {
+                    background-color: $dark-100;
+                    box-shadow: inset 0 0 10px rgba($white, 0.4);
+                }
+
+                & > li {
+                    @include min-w-lg {
+                        &:nth-child(n + 2) {
+                            border-top-color: $dark-200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .nav-bottom {
+        &__item {
+            color: $muted-200;
+        }
+    }
+
+    // & .sub-menu {
+    //     background-color: $dark-100;
+    //     box-shadow: inset 0 0 10px rgba($white, 0.4);
+    // }
+}

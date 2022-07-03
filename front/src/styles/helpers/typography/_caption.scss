@@ -1,0 +1,75 @@
+.caption {
+    &-primary {
+        @include min-w-md {
+            font-size: 0.875em;
+        }
+        font-weight: 400;
+        font-size: 0.938em;
+        line-height: 160%;
+    }
+
+    &-secondary {
+        @include min-w-md {
+            font-size: 0.75em;
+        }
+        font-weight: 400;
+        font-size: 0.938em;
+        line-height: 160%;
+    }
+
+    &-tertiary {
+        @include min-w-md {
+            font-size: 1em;
+        }
+        font-size: 0.813em;
+        font-weight: 400;
+        line-height: 160%;
+    }
+
+    &-quaternary {
+        @include min-w-md {
+            font-weight: 300;
+        }
+        font-size: 0.75em;
+        font-weight: 400;
+        line-height: 160%;
+    }
+}
+
+.caption-block {
+    & > p {
+        &:nth-child(n + 2) {
+            @include min-w-md {
+                margin-top: 14px;
+            }
+            margin-top: 20px;
+        }
+    }
+}
+
+.caption-primary-block {
+    & > p {
+        &:nth-child(n + 2) {
+            @include min-w-lg {
+                margin-top: 40px;
+            }
+            margin-top: 20px;
+        }
+    }
+}
+
+.caption-secondary-block {
+    & > p {
+        &:nth-child(n + 2) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.caption-tertiary-block {
+    & > p {
+        &:nth-child(n + 2) {
+            margin-top: 10px;
+        }
+    }
+}

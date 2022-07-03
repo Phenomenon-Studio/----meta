@@ -1,0 +1,107 @@
+.artist-section {
+    margin-top: 100px;
+}
+
+.overview {
+    &-collapse {
+        @include max-w-md {
+            flex-direction: column;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+        &-polygon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &-image {
+        @include max-w-sm {
+            display: none !important;
+        }
+        margin: 0;
+        max-height: none;
+
+        &-mobile {
+            @include max-w-sm {
+                width: 328px;
+                height: 348px;
+                margin-top: 24px;
+            }
+            display: none;
+        }
+    }
+
+    &-title-container {
+        @include max-w-sm {
+            flex-direction: column;
+        }
+    }
+
+    &-description {
+        @include max-w-sm {
+            width: 100%;
+            margin-top: 20px;
+        }
+        width: 43%;
+    }
+}
+
+.collapse-icon {
+    width: 42px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    color: $white;
+}
+
+.overview-collapse-list {
+    @include max-w-md {
+        width: 80%;
+    }
+    @include max-w-sm {
+        width: 100%;
+    }
+    width: 43%;
+}
+
+.overview-collapse-list-item {
+    margin-top: 30px;
+
+    &-title {
+        width: 100%;
+        height: max-content;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 160%;
+        margin-top: 5.5px;
+        color: $white;
+    }
+}
+
+.overview-collapse-list-item-description {
+    @include max-w-sm {
+        margin-left: -70px;
+    }
+    display: none;
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+
+    &.active {
+        display: block;
+    }
+}
+
+.overview-collapse-list-item-container {
+    margin-left: 30px;
+    width: 100%;
+}

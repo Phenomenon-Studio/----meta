@@ -1,0 +1,21 @@
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-md {
+        @include min-w-md {
+            font-size: 1em;
+        }
+        font-size: 0.938em;
+    }
+}
+
+.sm-max\:text {
+    @include max-w-sm {
+        &-left {
+            text-align: left;
+        }
+    }
+}
+

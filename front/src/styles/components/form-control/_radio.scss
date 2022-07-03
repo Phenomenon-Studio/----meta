@@ -1,0 +1,20 @@
+.radio {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+
+    input[type="radio"] {
+        // &:checked {
+        // }
+
+        &[disabled] {
+            &:hover {
+                pointer-events: none !important;
+            }
+        }
+    }
+
+    // &.disabled {
+    //     cursor: not-allowed !important;
+    // }
+}

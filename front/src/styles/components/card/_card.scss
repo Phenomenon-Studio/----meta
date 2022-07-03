@@ -1,0 +1,266 @@
+.card {
+    @include min-w-md {
+        &:not(.card--default) {
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 30px;
+        }
+    }
+    display: flex;
+
+    &.card--rounded {
+        border-radius: 30px;
+    }
+
+    &.card--no-border {
+        border: none;
+    }
+
+    &.card--border {
+        border-width: 1px;
+        border-style: solid;
+        // border: 1px solid rgba($white, 0.1);
+    }
+
+    &--sm {
+        @include min-w-sm {
+            min-height: 14.688em;
+        }
+
+        & .card__holder {
+            @include min-w-md {
+                padding-right: 2.188em;
+                padding-bottom: 1.5em;
+            }
+        }
+
+        & .card__line {
+            padding-bottom: 0.813em;
+            max-width: 385px;
+
+            &::after {
+                @include max-w-xs {
+                    width: 1.875em;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include min-w-md {
+            // width: 3.75em;
+            // height: 3.75em;
+            margin-right: 1.875em;
+        }
+        width: 3.75em;
+        height: 3.75em;
+        // margin-bottom: 1.563em;
+        margin-bottom: 1.875em;
+        flex-shrink: 0;
+
+        & img {
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__holder {
+        @include min-w-md {
+            // padding-left: 2.5em;
+            // padding-right: 2.5em;
+            // padding-top: 2.5em;
+            // padding-bottom: 1.75em;
+            padding: 2.5em 2.5em 1.75em;
+        }
+    }
+
+    &__inner {
+        width: 100%;
+        padding: 1.25em 0.938em;
+    }
+
+    &__content {
+        @include min-w-md {
+            padding: 1.75em 1.75em 2.313em;
+        }
+        padding: 1.313em 1em 1.625em;
+    }
+
+    &__line {
+        @include min-w-sm {
+            padding-bottom: 1.25em;
+        }
+        padding-bottom: 0.938em;
+    }
+
+    &__pic {
+        position: relative;
+
+        &::before {
+            content: "";
+            padding-top: 100%;
+            display: block;
+        }
+
+        & > div:not([class]) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+            }
+        }
+
+        &--secondary {
+            border-radius: 30px 30px 0 0;
+            overflow: hidden;
+
+            &::before {
+                @include min-w-md {
+                    padding-top: 85%;
+                }
+                content: "";
+                padding-top: 110%;
+                display: block;
+            }
+
+            & > div:not([class]) {
+                &,
+                & > img {
+                    border-radius: 30px 30px 0 0;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+    &__img {
+        & > img {
+            max-height: 7.5em;
+        }
+    }
+
+    &__links {
+        position: absolute;
+        right: 0.938em;
+        bottom: 0.938em;
+
+        & > * {
+            &:nth-child(n + 2) {
+                margin-left: 2px;
+            }
+        }
+    }
+
+    &__sign {
+        & > svg,
+        & > img {
+            max-width: 1.063em;
+            max-height: 0.875em;
+            margin-right: 0.313em;
+            vertical-align: middle;
+        }
+    }
+
+    &\:hover {
+        cursor: pointer;
+        background-color: transparent;
+        will-change: box-shadow;
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        p {
+            will-change: color;
+            transition: color 0.15s;
+        }
+    }
+}
+
+.cards {
+    @include min-w-md {
+        grid-column-gap: 1.5em;
+        grid-row-gap: 1.5em;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    // grid-row-gap: 3.75em;
+    grid-row-gap: 3.125em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.cards-col-4 {
+    @include min-w-sm {
+        grid-column-gap: 1.5em;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+    @include min-w-md {
+        grid-column-gap: 1.5em;
+        grid-row-gap: 3.75em;
+        grid-template-columns: repeat(3, 0.3333fr);
+    }
+    @include min-w-lg {
+        grid-column-gap: 2.375em;
+        grid-row-gap: 5em;
+        grid-template-columns: repeat(4, 0.25fr);
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    grid-row-gap: 2.5em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.cards-col-4-secondary {
+    @include min-w-sm {
+        grid-column-gap: 1.5em;
+        grid-row-gap: 5em;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+    @include min-w-md {
+        grid-row-gap: 3.75em;
+    }
+    @include min-w-lg {
+        grid-template-columns: repeat(4, 0.25fr);
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    grid-row-gap: 2.5em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.cards-col-3 {
+    @include min-w-sm {
+        grid-column-gap: 1.5em;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+    @include min-w-md {
+        grid-column-gap: 1.5em;
+        grid-row-gap: 3.75em;
+        grid-template-columns: repeat(3, 0.3333fr);
+    }
+    @include min-w-lg {
+        grid-row-gap: 5em;
+    }
+    display: grid;
+    grid-auto-columns: auto;
+    grid-column-gap: 0;
+    grid-row-gap: 2.5em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}

@@ -1,0 +1,33 @@
+body {
+    &.theme-light {
+        .feature-card {
+            // background-color: $white;
+            border: 1px solid rgba($dark-100, 0.1);
+
+            &\:hover {
+                &:hover {
+                    box-shadow: inset 0 0 40px rgba($black, 0.12);
+
+                    p {
+                        color: $black;
+                    }
+
+                    & .num-box {
+                        & > svg {
+                            fill: rgba($light-400, 0.3);
+                            stroke: $muted-800;
+                        }
+                    }
+
+                    & .card__link {
+                        color: $black;
+
+                        & > svg {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

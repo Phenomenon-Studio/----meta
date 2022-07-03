@@ -1,0 +1,99 @@
+.partners {
+    &__holder {
+        @include min-w-md {
+            margin-top: 7.5em;
+        }
+        margin-top: 2.5em;
+
+        & .swiper-slide {
+            @include min-w-sm {
+                max-width: 325px;
+            }
+
+            @include min-w-md {
+                width: 33.3333%;
+                max-width: none;
+            }
+            max-width: 260px;
+            padding-right: 20px;
+        }
+
+        &--secondary {
+            @include min-w-md {
+                margin-top: 5.313em;
+            }
+        }
+    }
+
+    &__pic {
+        @include min-w-sm {
+            height: 5.625em;
+        }
+        height: 4.625em;
+
+        & img {
+            max-height: 100%;
+        }
+    }
+
+    &__logos {
+        & .swiper-wrapper {
+            @include min-w-sm {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        & .swiper-slide {
+            @include min-w-sm {
+                margin-left: 0.938em;
+                margin-right: 0.938em;
+                padding-right: 0;
+                width: auto;
+                height: auto;
+                max-width: 16.25em;
+                max-height: 8em;
+                flex-shrink: inherit;
+
+                & img {
+                    max-height: 100%;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            max-width: 10.75em;
+            max-height: 5.2em;
+            padding-right: 2em;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__btn {
+        @include max-w-sm {
+            margin-top: 2.5em;
+        }
+    }
+
+    &__content {
+        @include max-w-xs {
+            flex-wrap: wrap;
+        }
+        margin-left: -0.938em;
+        margin-right: -0.938em;
+        margin-bottom: -1.875em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+    }
+}

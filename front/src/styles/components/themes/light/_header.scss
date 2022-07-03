@@ -1,0 +1,44 @@
+body {
+    &.theme-light {
+        & .header {
+            background-color: rgba($white, 0.14);
+
+            & .navbar__nav {
+                & ~ .hamburger > span {
+                    &,
+                    &::before,
+                    &::after {
+                        background-color: $black;
+                    }
+                }
+            }
+
+            &--light {
+                background-color: $white;
+
+                & .navbar__nav {
+                    background-color: $white;
+
+                    & ~ .hamburger > span {
+                        &,
+                        &::before,
+                        &::after {
+                            background-color: $black;
+                        }
+                    }
+
+                    & li {
+                        & > a {
+                            color: $black;
+
+                            &:hover,
+                            &:active {
+                                color: $magenta-100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.subscribe {
+    &__holder {
+        @include min-w-md {
+            padding-top: 6.563em;
+        }
+        @include max-w-sm {
+            flex-direction: column-reverse;
+        }
+        display: flex;
+        padding-top: 2.5em;
+    }
+
+    &__item {
+        @include min-w-md {
+            margin-right: 5.3%;
+        }
+        @include min-w-xl {
+            margin-right: 10.6%;
+        }
+    }
+
+    &__input {
+        & input {
+            padding-bottom: 0;
+        }
+    }
+
+    &__form {
+        &:focus-within {
+            & .form__line {
+                stroke: $magenta-100;
+            }
+        }
+    }
+
+    &__pic {
+        @include min-w-md {
+            min-width: 50%;
+            min-height: 18.125em;
+        }
+
+        &::before {
+            @include min-w-sm {
+                padding-top: 43.7%;
+            }
+            padding-top: 55.1%;
+        }
+
+        & .flex-image__pic {
+            @include min-w-md {
+                border-radius: 30px;
+            }
+
+            & > img {
+                @include min-w-md {
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}

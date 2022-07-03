@@ -1,0 +1,115 @@
+.nice-select {
+    &.select {
+        width: 100% !important;
+        background-color: transparent !important;
+        border: none !important;
+        font-weight: 400;
+        font-size: 16px !important;
+        line-height: 160% !important;
+        height: auto !important;
+        outline: none;
+        border-radius: none;
+        padding: 0 1.5em  0.214em 0.714em !important;
+        min-height: 1.813em;
+
+        &--sm {
+            font-size: 11px !important;
+
+            & ~ .form__placeholder {
+                font-size: 11px !important;
+            }
+        }
+
+        & .current {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+        &::after {
+            margin-top: -2%;
+            width: 7px;
+            height: 7px;
+            border-bottom-width: 1px;
+            border-right-width: 1px;
+        }
+
+        &.is-fixed {
+            & .nice-select-dropdown {
+                position: fixed;
+                z-index: 5;
+            }
+        }
+
+        & .nice-select-dropdown {
+            margin-top: 1.25em;
+            width: 100%;
+            padding: 0.625em;
+            border-radius: 14px;
+            will-change: transform;
+            transition: transform 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+
+            & .option {
+                background-color: transparent !important;
+                line-height: 160% !important;
+                transition: color 0.3s ease;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+
+                &.selected {
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &.open {
+            & ~ .form__placeholder {
+                color: $magenta-100;
+            }
+
+            & ~ .form__line {
+                stroke: $magenta-100;
+            }
+
+            & ~ span,
+            & ~ div {
+                &.form__line {
+                    border-bottom-color: $magenta-100;
+                }
+            }
+        }
+    }
+
+    & .list {
+        & > li {
+            padding: 0.563em 0.625em;
+
+            &:empty {
+                display: none;
+            }
+
+            &:nth-child(n + 2) {
+                border-top-width: 1px;
+                border-top-style: solid;
+            }
+        }
+    }
+}
+
+select {
+    &.select {
+        display: block !important;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+}

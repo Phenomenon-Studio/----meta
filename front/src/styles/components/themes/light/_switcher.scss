@@ -1,0 +1,28 @@
+body {
+    &.theme-light {
+        & .theme-switcher {
+            background-color: $white;
+            box-shadow: inset 0 0 10px rgba($black, 0.2);
+
+            &__item {
+                & svg {
+                    stroke: rgba($black, 0.5);
+                }
+
+                &:hover {
+                    & svg {
+                        stroke: $black;
+                    }
+                }
+
+                & input[type="radio"] {
+                    &:checked {
+                        & ~ svg {
+                            stroke: $teal-100;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.lines {
+    @include max-w-sm {
+        display: none;
+    }
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+        width: 489px;
+        height: 24px;
+        border-top-left-radius: 100px 50px;
+        opacity: 0.1;
+        border: 1px solid $white;
+        border-right: none;
+        border-bottom-color: transparent;
+
+        &.right {
+            border-top-right-radius: 100px 50px;
+            border-top-left-radius: 0px;
+            border-left: none;
+            border-right: 1px solid $white;
+            width: 591px;
+        }
+    }
+}

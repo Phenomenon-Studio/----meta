@@ -1,0 +1,43 @@
+body:not(.theme-light) {
+    & .top-rounded,
+    & .bottom-rounded {
+        & svg {
+            stroke: rgba($white, 0.1);
+        }
+    }
+
+    & .top-line {
+        border-top-color: rgba($white, 0.1);
+    }
+
+    & .bottom-line {
+        border-bottom-color: $dark-200;
+    }
+
+    & .line-title {
+        &::after {
+            background-color: $white;
+        }
+
+        &::before {
+            background-color: rgba($white, 0.1);
+        }
+    }
+
+    & .top-two-line {
+        &::before,
+        &::after {
+            border-top-color: rgba($white, 0.1);
+        }
+    }
+
+    & .quote-block {
+        &__sign {
+            color: $muted-100;
+
+            & > strong {
+                color: $white;
+            }
+        }
+    }
+}

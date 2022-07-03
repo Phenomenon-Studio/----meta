@@ -1,0 +1,19 @@
+.subtitle {
+    &-primary {
+        @include min-w-md {
+            font-size: 1em;
+        }
+        font-weight: 400;
+        font-size: 0.938em;
+        line-height: 160%;
+    }
+
+    &-secondary {
+        @include min-w-md {
+            font-size: 1.5em;
+        }
+        font-weight: 400;
+        font-size: 1.375em;
+        line-height: 150%;
+    }
+}

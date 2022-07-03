@@ -1,0 +1,41 @@
+body {
+    &.theme-light {
+        .btn {
+            &--outline {
+                color: $black;
+                border: 1px solid transparent;
+                background-color: rgba($white, 0.6);
+                box-shadow: inset 0 0 10px rgba($black, 0.12);
+
+                &:not([disabled]):hover {
+                    background-color: $white;
+                    border-color: rgba(55, 172, 155, 0.6);
+                    box-shadow: 0 0 10px rgba(55, 172, 155, 0.8);
+                }
+
+                &:not([disabled]):active {
+                    background-color: $white;
+                    border-color: rgba(55, 172, 155, 0.6);
+                    box-shadow: 0 0 10px rgba(55, 172, 155, 0.8);
+                }
+            }
+
+            &--secondary-outline {
+                color: $black;
+                background-color: $white;
+                border: 1px solid transparent;
+                box-shadow: none;
+
+                &:not([disabled]):hover {
+                    border-color: rgba(55, 172, 155, 0.6);
+                    box-shadow: inset 0 0 10px rgba(55, 172, 155, 0.8);
+                }
+
+                &:not([disabled]):active {
+                    border-color: rgba(55, 172, 155, 0.6);
+                    box-shadow: inset 0 0 10px rgba(55, 172, 155, 0.8);
+                }
+            }
+        }
+    }
+}

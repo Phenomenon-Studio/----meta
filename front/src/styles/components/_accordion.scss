@@ -1,0 +1,151 @@
+.accordion {
+    &__item {
+        transition: background-color 0.3s cubic-bezier(0.35, 0.15, 0.37, 1.14);
+        will-change: background-color;
+
+        &.is-open {
+            & .accordion__toggler {
+                &::before {
+                    transform: translate3d(0, 0, 0) translateZ(0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg)
+                        skew(0deg, 0deg);
+                    transform-style: preserve-3d;
+                }
+
+                &::after {
+                    transform: translate3d(0, 0, 0) translateZ(0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg)
+                        skew(0deg, 0deg);
+                    transform-style: preserve-3d;
+                }
+            }
+        }
+    }
+
+    &__holder {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.35, 0.15, 0.37, 1.14);
+
+        &.is-open {
+            max-height: none !important;
+            overflow: visible;
+        }
+    }
+
+    &__toggler {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(50% - 0.75px);
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background-color: $muted-100;
+            will-change: transform;
+            transition: transform $transition ease, background-color ease;
+        }
+
+        &::before {
+            transform: translate3d(0, 0, 0) translateZ(0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+        }
+
+        &::after {
+            transform: translate3d(0, 0, 0) translateZ(0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+        }
+    }
+}
+
+.accordion-mq,
+.accordion {
+    &__toggler {
+        // background-color: $light-100;
+        // width: 2.625em;
+        // height: 2.625em;
+        // border-radius: 50%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // flex-shrink: 0;
+        // will-change: transform;
+        // transition: background-color $transition ease;
+
+        &:hover {
+            // background-color: $light-200;
+        }
+
+        // & > svg {
+        //     fill: $dark-100;
+        //     flex-shrink: 0;
+        //     max-width: 1.5em;
+        //     max-height: 1.5em;
+        //     will-change: transform;
+        //     transition: fill 0.2s ease, transform $transition ease;
+        // }
+    }
+}
+
+// .accordion-mq {
+//     @include max-w-sm {
+//         &__item {
+//             &.is-open {
+//                 & .accordion-mq__toggler {
+//                     background-color: $light-400;
+
+//                     & svg {
+//                         fill: $dark-100;
+//                         transform: scaleY(-1);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     &__toggler {
+//         @include min-w-md {
+//             display: none;
+//         }
+//         background-color: $light-400;
+
+//         & svg {
+//             fill: $dark-100;
+//         }
+//     }
+
+//     &__holder {
+//         @include max-w-sm {
+//             max-height: 0;
+//             overflow: hidden;
+//             transition: max-height 0.3s cubic-bezier(0.35, 0.15, 0.37, 1.14);
+
+//             &.is-open {
+//                 max-height: none !important;
+//                 overflow: visible;
+//             }
+//         }
+//     }
+// }
+
+.no-animation-accordion {
+    & .accordion__item,
+    & .accordion__toggler,
+    & .accordion__holder {
+        transition: none !important;
+    }
+
+    & [data-accordion-toggler],
+    & [data-accordion-holder] {
+        * {
+            transition: none !important;
+        }
+    }
+}

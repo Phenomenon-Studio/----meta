@@ -1,0 +1,47 @@
+.theme-switcher {
+    border-radius: 8px;
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 2.125em;
+    z-index: 20;
+    align-items: center;
+    padding: 0.594em 0.188em;
+    pointer-events: auto;
+
+    &__item {
+        padding: 2px;
+
+        &:nth-child(n + 2) {
+            margin-top: 0.313em;
+        }
+
+        & svg {
+            max-width: 1.375em;
+            max-height: 1.375em;
+            will-change: stroke;
+            transform: stroke $transition;
+
+            &.icon-moon {
+                max-width: 1.03em;
+            }
+        }
+    }
+
+    &-wrap {
+        @include min-w-lg {
+            top: 0;
+            right: 1.813em;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        @include max-w-md {
+            position: absolute;
+            top: calc(50% - 3.625em);
+            transform: translateY(-50%);
+            right: 15px;
+        }
+        pointer-events: none;
+    }
+}

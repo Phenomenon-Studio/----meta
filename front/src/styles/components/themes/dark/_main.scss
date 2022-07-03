@@ -1,0 +1,73 @@
+body:not(.theme-light) {
+    background-color: $dark-100;
+
+    h1:not(.color-white),
+    h2:not(.color-white),
+    h3:not(.color-white),
+    h4:not(.color-white),
+    h5:not(.color-white) {
+        color: $white;
+    }
+
+    [class^="p-"],
+    [class^="caption"],
+    [class^="subtitle"],
+    [class^="list"],
+    .text {
+        color: $muted-100;
+    }
+
+    // NOTE: code not used
+    // & .main-bg {
+    //     background: linear-gradient(rgba(26, 24, 26, 1), rgba(26, 24, 26, 0) 1px),
+    //         linear-gradient(90deg, rgba(26, 24, 26, 1) 1px, rgba(26, 24, 26, 0) 1px);
+    //     background-size: 10px 10px;
+
+    //     &::before {
+    //         background-image: url("../images/bg-noise.png");
+    //     }
+    // }
+
+    // .section-bg {
+    //     &::before {
+    //         background-image: url("../images/bg-layer-dark.svg");
+    //     }
+    // }
+
+    & .light {
+        display: none;
+    }
+
+    & .frame {
+        &__arrow {
+            fill: $white;
+        }
+
+        &__filter-1 {
+            opacity: 0.4;
+        }
+
+        &__filter-path {
+            fill: $dark-500;
+        }
+
+        &__border {
+            stroke: $white;
+        }
+
+        &__fill {
+            fill: $dark-100;
+        }
+    }
+
+    & .num-box {
+        & > span {
+            color: $white;
+        }
+
+        & > svg {
+            fill: rgba($dark-600, 0);
+            stroke: rgba($white, 0.1);
+        }
+    }
+}

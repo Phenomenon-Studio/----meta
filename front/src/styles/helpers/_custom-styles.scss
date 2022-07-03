@@ -1,0 +1,84 @@
+%fixedXY {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@include placeholder {
+    opacity: 1;
+    line-height: normal;
+}
+
+.no-scroll {
+    @extend %fixedXY;
+    overflow-y: scroll;
+}
+
+.not-allowed {
+    pointer-events: none !important;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 1235px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--xl {
+        @media (min-width: 1399px) {
+            margin-left: 65px;
+            margin-right: 65px;
+            width: auto;
+            max-width: none;
+        }
+    }
+}
+
+.logo {
+    display: inline-flex;
+    max-height: 2.125em;
+    flex-shrink: 0;
+}
+
+.crs-pointer {
+    cursor: pointer;
+}
+
+.mark {
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 100%;
+    color: $magenta-100;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.313em 0.9em;
+    border-radius: 6px;
+    background-color: rgba($dark-200, 0.4);
+    backdrop-filter: blur(3px);
+}
+
+span {
+    &.error {
+        display: inline-flex;
+        margin-top: 3px;
+        font-size: 0.875em;
+        line-height: 120%;
+        color: $magenta-100;
+    }
+}
+
+.events {
+    &-none {
+        pointer-events: none;
+    }
+
+    &-auto {
+        pointer-events: auto;
+    }
+}

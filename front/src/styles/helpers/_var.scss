@@ -1,0 +1,50 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+/* Fonts */
+$font-primary: Poppins, sans-serif;
+
+/* Colors */
+$white: #fff;
+$light-100: #eaeaea;
+$light-200: #e1e1e1;
+$light-300: #aecac6;
+$light-400: #ededed;
+$light-500: #fcfafd;
+$light-600: #ecedf0;
+$dark-100: #171516;
+$dark-200: #322f31;
+$dark-300: #242735;
+$dark-400: #56575e;
+$dark-500: #161414;
+$dark-600: #181618;
+$dark-700: #242223;
+$dark-800: #56575d;
+$dark-900: #212023;
+$dark-1000: #494b56;
+$dark-1100: #151317;
+$teal-100: #37ac9b;
+$teal-200: #1bb7b2;
+$teal-300: #108a78;
+$teal-400: #27a693;
+$magenta-100: #c062b5;
+$magenta-200: #d14ac1;
+$muted-100: #a0a5aa;
+$muted-200: rgba($muted-100, 0.7);
+$muted-300: #85878f;
+$muted-400: #a9aab0;
+$muted-500: #80828b;
+$muted-600: #c4c4c4;
+$muted-700: #8c8787;
+$muted-800: #a0a0a0;
+$muted-900: #777a7e;
+$muted-1000: #a8acb3;
+$black: #000;
+// $default: #202024;
+// $primary-100: #3f3fe8;
+
+
+/* Transition */
+$transition: 0.2s;

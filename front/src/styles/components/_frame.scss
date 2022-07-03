@@ -1,0 +1,12 @@
+.frame {
+    & > svg {
+        max-width: 546px;
+        max-height: 543px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__mask-path {
+        fill: $muted-600;
+    }
+}

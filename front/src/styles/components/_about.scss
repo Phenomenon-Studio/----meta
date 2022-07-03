@@ -1,0 +1,11 @@
+.about-primary {
+    @include min-w-md {
+        padding-top: 8.5em;
+        padding-bottom: 1.5em;
+    }
+    @include min-w-lg {
+        padding-top: 11.875em;
+    }
+    padding-top: 7.188em;
+    padding-bottom: 1.688em;
+}

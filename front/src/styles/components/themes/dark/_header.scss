@@ -1,0 +1,7 @@
+body {
+    &.theme-light {
+        & .header {
+            background-color: rgba(23, 21, 22, 0.14);
+        }
+    }
+}

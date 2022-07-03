@@ -1,0 +1,105 @@
+.mt-auto {
+    margin-top: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indent {
+    &-y {
+        @include min-w-md {
+            margin-top: 6.25em;
+            margin-bottom: 6.25em;
+        }
+        @include max-w-sm {
+            &\:sm {
+                margin-top: 3.75em;
+                margin-bottom: 3.75em;
+            }
+        }
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+
+    &-t {
+        @include min-w-md {
+            margin-top: 6.25em;
+        }
+        margin-top: 5em;
+    }
+
+    &-b {
+        @include min-w-md {
+            margin-bottom: 6.25em;
+        }
+        margin-bottom: 5em;
+    }
+
+    &-md {
+        &-y {
+            @include min-w-md {
+                margin-top: 5.625em;
+                margin-bottom: 5.625em;
+            }
+            @include max-w-sm {
+                &\:sm {
+                    margin-top: 3.75em;
+                    margin-bottom: 3.75em;
+                }
+            }
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
+        }
+
+        &-t {
+            @include min-w-md {
+                margin-top: 5.625em;
+            }
+            margin-top: 2.5em;
+        }
+
+        &-b {
+            @include min-w-md {
+                margin-bottom: 5.625em;
+            }
+            margin-bottom: 2.5em;
+        }
+    }
+
+    &-lg {
+        &-y {
+            @include min-w-md {
+                margin-top: 8.125em;
+                margin-bottom: 8.125em;
+            }
+            @include max-w-sm {
+                &\:sm {
+                    margin-top: 3.75em;
+                    margin-bottom: 3.75em;
+                }
+            }
+            margin-top: 5em;
+            margin-bottom: 5em;
+        }
+
+        &-t {
+            @include min-w-md {
+                margin-top: 8.125em;
+            }
+            margin-top: 5em;
+        }
+
+        &-b {
+            @include min-w-md {
+                margin-bottom: 8.125em;
+            }
+            margin-bottom: 5em;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+body {
+    &.theme-light {
+        & .form {
+            &__control {
+                & input {
+                    color: $black;
+
+                    &:focus {
+                        & ~ .form__placeholder {
+                            color: $magenta-100;
+                        }
+
+                        & ~ .form__line {
+                            stroke: $magenta-100;
+                        }
+
+                        & ~ span,
+                        & ~ div {
+                            &.form__line {
+                                border-bottom-color: $magenta-100;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__placeholder {
+                color: $dark-400;
+            }
+
+            &__line {
+                stroke: $light-100;
+            }
+
+            & span,
+            & div {
+                &.form__line {
+                    border-bottom-color: $light-100;
+                }
+            }
+        }
+
+        // & .subscribe {
+
+        //     &__form {
+        //         &:focus-within {
+        //             & .form__line {
+        //                 border-bottom-color: $magenta-100;
+        //             }
+        //         }
+        //     }
+        // }
+
+        input,
+        textarea {
+            &::placeholder {
+                color: $dark-400;
+            }
+
+            &:-moz-placeholder {
+                color: $dark-400;
+            }
+
+            &::-moz-placeholder {
+                color: $dark-400;
+            }
+
+            &:-ms-input-placeholder {
+                color: $dark-400;
+            }
+
+            &::-webkit-input-placeholder {
+                color: $dark-400;
+            }
+        }
+    }
+}

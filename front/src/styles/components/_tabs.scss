@@ -1,0 +1,105 @@
+.tabs {
+    &__nav {
+        @include min-w-lg {
+            & .swiper-wrapper {
+                flex-direction: column;
+            }
+
+            & .swiper-slide {
+                &:nth-child(n + 2) {
+                    margin-top: 0.75em;
+                }
+            }
+        }
+
+        & .swiper-container {
+            @include max-w-md {
+                margin-left: -15px;
+                margin-right: -15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        & .swiper-slide {
+            @include max-w-md {
+                padding-right: 6px;
+                padding-bottom: 5px;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+
+    &__link {
+        // display: inline-flex;
+        // align-items: center;
+        // padding: 0.75em 1.563em;
+        // border-radius: 16px;
+        // font-weight: 600;
+        // line-height: 130%;
+        // color: $dark-300;
+        // background-color: transparent;
+        // box-shadow: none;
+        // transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        &:not([disabled]):hover,
+        &.is-active {
+            // background-color: $dark-100;
+            // color: $white;
+            // box-shadow: 6px 7px 17px -3.10256px rgba(0, 0, 0, 0.27);
+        }
+    }
+
+    &__holder {
+        position: relative;
+    }
+
+    &__pane {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.85s ease;
+        z-index: -1;
+
+        &.is-active {
+            position: static;
+            animation-duration: 0.85s;
+            opacity: 0;
+            animation-fill-mode: both;
+            animation-timing-function: ease;
+            animation-name: fadeIn;
+            z-index: 1;
+        }
+    }
+
+    &.await-action {
+        & .tabs__link {
+            transition: none !important;
+
+            &::before {
+                transition: none !important;
+            }
+        }
+
+        & .tabs__pane {
+            transition: none !important;
+
+            &.is-active {
+                animation: none !important;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

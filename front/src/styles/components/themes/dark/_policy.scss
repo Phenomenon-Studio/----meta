@@ -1,0 +1,46 @@
+body:not(.theme-light) {
+    .color-white-policy {
+        color: $white;
+        font-weight: 600;
+    }
+    .policy-container {
+        & strong {
+            color: $white;
+        }
+        & p {
+            color: #a0a5aa;
+        }
+        & ul {
+            & > li {
+                color: #a0a5aa;
+            }
+        }
+        & ol {
+            & > li {
+                & .letter-ol {
+                    & ol {
+                        & > li {
+                            .roman-ol ol {
+                                & > li {
+                                    &::marker {
+                                        color: #a0a5aa;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &::marker {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .policy-bg {
+        background-repeat: no-repeat;
+        padding: 20px 40px 30px 0px;
+        background-size: 100% 100%;
+        background-color: #212023;
+    }
+}

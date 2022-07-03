@@ -1,0 +1,79 @@
+body {
+    &.theme-light {
+        background-color: $white;
+
+        h1:not(.color-white),
+        h2:not(.color-white),
+        h3:not(.color-white),
+        h4:not(.color-white),
+        h5:not(.color-white) {
+            color: $black;
+        }
+
+        [class^="p-"],
+        [class^="caption"],
+        [class^="subtitle"],
+        [class^="list"],
+        .text {
+            color: $dark-400;
+        }
+
+        //NOTE: code not used
+        // & .main-bg {
+        //     background: linear-gradient(rgba($light-500, 1), rgba($light-500, 0) 1px),
+        //         linear-gradient(90deg, rgba($light-500, 1) 1px, rgba($light-500, 0) 1px);
+        //     background-size: 10px 10px;
+        // }
+
+        // .section-bg {
+        //     &::before {
+        //         background-image: url("../images/bg-layer-light.svg");
+        //     }
+        // }
+
+        & .dark {
+            display: none;
+        }
+
+        & .frame {
+            &__arrow {
+                fill: $black;
+            }
+
+            &__filter-1 {
+                opacity: 0.3;
+            }
+
+            &__filter-path {
+                fill: rgba($dark-800, 0.6);
+            }
+
+            &__border {
+                stroke: $black;
+            }
+
+            &__fill {
+                fill: $white;
+            }
+        }
+
+        & .num-box {
+            & > span {
+                color: $black;
+            }
+
+            & > svg {
+                fill: rgba($light-400, 0);
+                fill: none;
+                stroke: rgba($black, 0.1);
+            }
+
+            &:hover {
+                & > svg {
+                    fill: rgba($light-400, 0.3);
+                    stroke: $muted-800;
+                }
+            }
+        }
+    }
+}

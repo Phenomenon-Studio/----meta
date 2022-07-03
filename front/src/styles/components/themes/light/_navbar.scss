@@ -1,0 +1,97 @@
+body {
+    &.theme-light {
+        .navbar {
+            &__nav {
+                @include max-w-md {
+                    background-color: $white;
+
+                    &.is-active {
+                        & ~ .hamburger > span {
+                            &,
+                            &::before,
+                            &::after {
+                                background-color: $black;
+                            }
+                        }
+                    }
+                }
+
+                & li {
+                    & > a {
+                        // @include max-w-md {
+                        //     color: $black;
+                        // }
+                        color: $black;
+
+                        &:hover,
+                        &:active {
+                            color: $magenta-100;
+                        }
+                    }
+
+                    &.current_page_item,
+                    &.current-menu-item,
+                    &.current-menu-parent {
+                        &:not(:hover),
+                        &:not(:active) {
+                            & > a {
+                                color: $magenta-100;
+                            }
+                        }
+                    }
+                }
+
+                .sub-menu {
+                    @include min-w-lg {
+                        background-color: $white;
+                        box-shadow: inset 0 0 20px rgba($black, 0.4);
+                    }
+
+                    & > li {
+                        &:nth-child(n + 2) {
+                            @include min-w-lg {
+                                border-top-color: $light-100;
+                            }
+                        }
+
+                        & > a {
+                            // @include min-w-lg {
+                            //     &:not(.current_page_item),
+                            //     &:not(.current-menu-item),
+                            //     &:not(.current-menu-parent) {
+                            //         color: $black;
+                            //     }
+
+                            //     &:hover,
+                            //     &:active {
+                            //         color: $magenta-100;
+                            //     }
+                            // }
+                            &:not(.current_page_item),
+                            &:not(.current-menu-item),
+                            &:not(.current-menu-parent) {
+                                color: $black;
+                            }
+
+                            &:hover,
+                            &:active {
+                                color: $magenta-100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .nav-bottom {
+            &__item {
+                color: $muted-900;
+            }
+        }
+
+        // & .sub-menu {
+        //     background-color: rgba($white, 0.6);
+        //     box-shadow: inset 0 0 10px rgba($black, 0.12);
+        // }
+    }
+}

@@ -1,0 +1,198 @@
+.slider-pagination {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.813em;
+    width: auto;
+    // margin-left: 0.625em;
+    // margin-right: 0.625em;
+
+    &.main-pagination {
+        position: relative;
+        z-index: 20;
+        bottom: 40px !important;
+    }
+}
+
+.swiper-pagination-bullet {
+    &.swiper-pagination-bullet-active {
+        background: $magenta-200;
+    }
+}
+
+.slider-buttons {
+    & .swiper-slide {
+        padding-right: 12px;
+        padding-bottom: 5px;
+        width: auto;
+        height: auto;
+
+        &:last-child {
+            margin-left: auto;
+            padding-right: 0;
+        }
+    }
+}
+
+.slider-wrap {
+    & .swiper-container {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.swiper-slide {
+    transform: translateZ(0);
+}
+
+.slider-cards {
+    & .swiper-slide {
+        @include min-w-md {
+            max-width: 24.063em;
+        }
+        @include min-w-xl {
+            max-width: calc(33.3333% - 16.4px);
+        }
+        max-width: 19.25em;
+    }
+}
+
+.slider-roadmap {
+    @include min-w-md {
+        height: 32.313em;
+    }
+    height: 35em;
+
+    &__item {
+        @include min-w-md {
+            max-width: 30.625em;
+        }
+        @include min-w-xl {
+            max-width: calc(50% - 31px);
+        }
+        max-width: 19.25em;
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(odd) {
+            & .slider-roadmap__pic {
+                margin-top: 2.5em;
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: column-reverse;
+
+            & .slider-roadmap__pic {
+                margin-bottom: 2.5em;
+            }
+        }
+    }
+
+    &__pic {
+        flex: 1 1 auto;
+        min-height: 0;
+        border-radius: 30px;
+        overflow: hidden;
+
+        &.empty {
+            position: relative;
+
+            &::before {
+                content: "";
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+            }
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+
+    &__plug {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 2.375em;
+        height: 2.375em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & > svg {
+            flex-shrink: 0;
+            width: 1.375em;
+            height: 1.375em;
+        }
+    }
+}
+
+.slider-control {
+    flex-shrink: 0;
+
+    & > button {
+        &:nth-child(n + 2) {
+            margin-left: 0.5em;
+        }
+    }
+
+    & .swiper-button-next,
+    & .swiper-button-prev {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        width: 3.125em;
+        height: 3.125em;
+        flex-shrink: 0;
+        padding: 0;
+        margin-top: 0;
+        top: 0;
+        position: static;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        will-change: background-color;
+        transition: background-color 0.2s ease-in-out;
+
+        & svg {
+            width: 0.875em;
+            height: 0.875em;
+            will-change: stroke;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        &:not(.swiper-button-disabled):hover,
+        &:not(.swiper-button-disabled):active {
+            background-color: $teal-100;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 1;
+            pointer-events: none;
+        }
+    }
+
+    & .swiper-button-prev {
+        transform: scale(-1);
+    }
+}

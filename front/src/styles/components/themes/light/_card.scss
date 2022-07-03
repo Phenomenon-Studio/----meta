@@ -1,0 +1,54 @@
+body {
+    &.theme-light {
+        .card {
+            @include min-w-md {
+                &:not(.card--default) {
+                    border-color: $light-100;
+                }
+            }
+
+            &.card--border {
+                border-color: $light-100;
+            }
+
+            &__sign {
+                & > svg {
+                    &,
+                    path {
+                        fill: $dark-400;
+                    }
+                }
+            }
+
+            &__pic--secondary {
+                background-color: $light-100;
+            }
+
+            &\:hover {
+                &:hover {
+                    @include min-w-md {
+                        background-color: rgba($white, 0.6);
+                        box-shadow: inset 0 0 40px rgba($black, 0.12);
+                    }
+
+                    p {
+                        color: $black;
+                    }
+
+                    & .card__link {
+                        color: $black;
+
+                        & > svg {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+
+            &\:active {
+                background-color: rgba($white, 0.3);
+                box-shadow: inset 0 0 20px rgba($black, 0.4);
+            }
+        }
+    }
+}

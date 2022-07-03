@@ -1,0 +1,33 @@
+.flex {
+    &-row {
+        flex-direction: row;
+    }
+
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-col {
+        flex-direction: column;
+    }
+
+    &-col-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+.sm-max\:flex {
+    @include max-w-sm {
+        &-col {
+            flex-direction: column;
+        }
+    }
+}
+
+.xs-max\:flex {
+    @include max-w-xs {
+        &-col {
+            flex-direction: column;
+        }
+    }
+}

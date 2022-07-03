@@ -1,0 +1,45 @@
+body {
+    &.theme-light {
+        & .top-rounded,
+        & .bottom-rounded {
+            & svg {
+                stroke: $light-100;
+            }
+        }
+
+        & .top-line {
+            border-top-color: $light-100;
+        }
+
+        & .bottom-line {
+            border-bottom-color: $light-100;
+        }
+
+        & .top-two-line {
+            &::before,
+            &::after {
+                border-top-color: $light-100;
+            }
+        }
+
+        & .line-title {
+            &::after {
+                background-color: $black;
+            }
+
+            &::before {
+                background-color: $light-100;
+            }
+        }
+
+        & .quote-block {
+            &__sign {
+                color: $black;
+
+                & > strong {
+                    color: $dark-400;
+                }
+            }
+        }
+    }
+}

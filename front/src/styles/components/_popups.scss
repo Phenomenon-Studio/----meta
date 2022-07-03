@@ -1,0 +1,111 @@
+.popup {
+    @include fade-out(0.3s, 0.3s);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 15px;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    align-items: flex-start;
+
+    &.js-popup-opened {
+        @include fade-in(0.3s);
+        opacity: 1;
+        z-index: 20;
+        visibility: visible;
+
+        .popup__overlay {
+            opacity: 1;
+            z-index: 20;
+            visibility: visible;
+            transition: opacity 0.3s 0s, visibility 0s 0s, z-index 0s 0s;
+        }
+
+        .popup__wrap {
+            transform: translateY(0);
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(#000, 0.3);
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+        transition: opacity 0.3s 0s, visibility 0s 0.3s, z-index 0s 0.3s;
+    }
+
+    &__wrap {
+        padding: 5em 1.875em;
+        position: relative;
+        z-index: 20;
+        max-width: 500px;
+        width: 100%;
+        transform: translateY(-20px);
+        transition: transform 0.3s;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 50px;
+    }
+
+    &__close {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        top: 1.875em;
+        right: 1.875em;
+        display: inline-flex;
+        padding: 0.625em;
+        z-index: 5;
+
+        & > svg {
+            width: 1em;
+            height: 1em;
+            will-change: transform;
+            transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s, stroke 0.2s ease;
+        }
+
+        &:hover,
+        &:active {
+            & > svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__icon {
+        // @include min-w-md {
+        // }
+        width: 6.25em;
+        height: 6.25em;
+        margin-bottom: 1.875em;
+        flex-shrink: 0;
+
+        & img {
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &--waitlist {
+
+        & .popup__wrap {
+            max-width: 715px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+body:not(.theme-light) {
+    .faq {
+        &__content {
+            border-top: 1px solid rgba($white, 0.1);
+        }
+
+        &__item {
+            & .accordion__toggler {
+                &::before,
+                &::after {
+                    background-color: $muted-100;
+                }
+            }
+
+            &.is-open {
+                & .accordion__toggler {
+                    &::before,
+                    &::after {
+                        background-color: $white;
+                    }
+                }
+
+                & .faq__headline {
+                    color: $white;
+                }
+            }
+        }
+
+        &__headline {
+            color: $muted-100;
+        }
+
+        &__holder {
+            & p {
+                color: $muted-100;
+            }
+        }
+    }
+}

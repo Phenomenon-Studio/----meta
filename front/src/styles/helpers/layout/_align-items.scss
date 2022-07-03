@@ -1,0 +1,29 @@
+.items {
+    &-start {
+        align-items: flex-start;
+    }
+
+    &-end {
+        align-items: flex-end;
+    }
+
+    &-center {
+        align-items: center;
+    }
+
+    &-baseline {
+        align-items: baseline;
+    }
+
+    &-stretch {
+        align-items: stretch;
+    }
+}
+
+.xs-max\:items {
+    @include max-w-xs {
+        &-start {
+            align-items: flex-start;
+        }
+    }
+}

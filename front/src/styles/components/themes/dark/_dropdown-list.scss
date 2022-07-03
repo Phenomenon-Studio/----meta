@@ -1,0 +1,49 @@
+body:not(.theme-light) {
+    .dropdown-list {
+        &__item {
+            &:nth-child(n + 2) {
+                @include max-w-xs {
+                    border-top-color: $dark-200;
+                }
+
+                & .dropdown-list__head {
+                    @include min-w-sm {
+                        border-top-color: $dark-200;
+                    }
+                }
+            }
+
+            .num-box {
+                &:hover {
+                    & > svg {
+                        fill: rgba($dark-600, 0.3);
+                        stroke: $white;
+                    }
+                }
+            }
+
+            &.is-open {
+                .num-box {
+                    & > svg {
+                        fill: rgba($dark-600, 0.3);
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+
+        &__headline {
+            color: $white;
+        }
+
+        &__content {
+            &::after {
+                background-color: $white;
+            }
+
+            &::before {
+                background-color: $dark-200;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.list {
+    &-disc {
+        @include min-w-md {
+            font-size: 1em;
+        }
+        font-size: 0.938em;
+        font-weight: 400;
+        line-height: 160%;
+        padding-left: 1.5em;
+        list-style-type: disc;
+        // list-style-position: inside;
+
+        & > li {
+            &::marker {
+                font-size: 75%;
+            }
+        }
+    }
+}

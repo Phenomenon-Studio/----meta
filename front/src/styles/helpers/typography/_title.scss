@@ -1,0 +1,78 @@
+h1 {
+    @include responsive-fz(42, 34);
+    line-height: 120%;
+    font-weight: 600;
+}
+
+h2 {
+    @include responsive-fz(32, 28);
+    line-height: 120%;
+    font-weight: 600;
+}
+
+h3 {
+    @include responsive-fz(32, 28);
+    line-height: 140%;
+    font-weight: 600;
+}
+
+h4 {
+    @include responsive-fz(24, 22);
+    line-height: 150%;
+    font-weight: 600;
+}
+
+h5 {
+    @include responsive-fz(18, 15);
+    line-height: 160%;
+    font-weight: 600;
+}
+
+
+
+@include min-w-xl {
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+}
+
+.title-main {
+    @include min-w-sm {
+        font-size: 2em;
+        line-height: 140%;
+    }
+    font-size: 2.125em;
+    line-height: 130%;
+    color: $white;
+}
+
+.title-secondary {
+    @include min-w-sm {
+        font-size: 2em;
+        line-height: 140%;
+    }
+    font-size: 1.375em;
+    line-height: 150%;
+    font-weight: 600;
+
+}
+
+// .caption {
+//     font-size: 0.875em;
+// }
