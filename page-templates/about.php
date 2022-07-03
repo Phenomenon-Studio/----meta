@@ -256,7 +256,7 @@ $_GET['header_classes'] = 'header--light';
         </div>
     </section>
 
-    <?php get_template_part('templates/subscribe-form'); ?>
+    <?php get_template_part('template-parts/subscribe-form'); ?>
 
 </main>
 

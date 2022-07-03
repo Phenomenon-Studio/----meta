@@ -810,7 +810,7 @@ Template name: Ollie verse
         </div>
     </section>
 
-    <?php get_template_part('templates/subscribe-form'); ?>
+    <?php get_template_part('template-parts/subscribe-form'); ?>
 
 </main>
 <?php include 'footer.php'; ?>

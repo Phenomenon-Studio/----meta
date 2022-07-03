@@ -67,7 +67,7 @@ Template name: VR Marketplace
         </div>
     </section>
 
-    <?php get_template_part('templates/subscribe-form'); ?>
+    <?php get_template_part('template-parts/subscribe-form'); ?>
 </man>
 
 <div id="popup-waitlist-success" class="popup" style="display: none;">

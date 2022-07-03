@@ -5,14 +5,14 @@
 Create link from array
 */
 function getLink($field,$classes=''){
-	echo '<a class="'.$classes.'" href="'.$field['url'].'" target="'.(($field['target']=='_blank') ? '_blank' : '_self').'">'.$field['title'].'</a>';
+  echo '<a class="'.$classes.'" href="'.$field['url'].'" target="'.(($field['target']=='_blank') ? '_blank' : '_self').'">'.$field['title'].'</a>';
 }
 
 /*
 Create image with attributes from array
 */
 function getImage($field,$classes=''){
-	echo '<img class="'.$classes.'" src="'.$field['url'].'" alt="'.$field['alt'].'" loading="lazy">';
+  echo '<img class="'.$classes.'" src="'.$field['url'].'" alt="'.$field['alt'].'" loading="lazy">';
 }
 //layout functions end
 
@@ -181,13 +181,13 @@ add asc options page
 */
 
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme settings',
-		'menu_title'	=> 'Theme settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
+  acf_add_options_page(array(
+    'page_title' 	=> 'Theme settings',
+    'menu_title'	=> 'Theme settings',
+    'menu_slug' 	=> 'theme-general-settings',
+    'capability'	=> 'edit_posts',
+    'redirect'		=> false
+  ));
 }  
 
 /*
@@ -246,15 +246,15 @@ create nav menu
 */
 
 if(function_exists('register_nav_menus')){
-	register_nav_menus(
-		array( // создаЄм любое количество областей
-		  'main_menu' => 'Main menu',
+  register_nav_menus(
+    array( // создаЄм любое количество областей
+      'main_menu' => 'Main menu',
       'footer_menu_1' => 'Footer menu 1',
       'footer_menu_2' => 'Footer menu 2',
       'footer_menu_3' => 'Footer menu 3',
       'footer_bottom_menu' => 'Footer bottom menu',
-		)
-	);
+    )
+  );
 }
 
 /*
@@ -262,8 +262,8 @@ truncate post content
 */
 
 function the_truncated_post($symbol_amount) {
-	$filtered = strip_tags( preg_replace('@<style[^>]*?>.*?</style>@si', '', preg_replace('@<script[^>]*?>.*?</script>@si', '', apply_filters('the_content', get_the_content()))) );
-	echo substr($filtered, 0, strrpos(substr($filtered, 0, $symbol_amount), ' ')) . '...';
+  $filtered = strip_tags( preg_replace('@<style[^>]*?>.*?</style>@si', '', preg_replace('@<script[^>]*?>.*?</script>@si', '', apply_filters('the_content', get_the_content()))) );
+  echo substr($filtered, 0, strrpos(substr($filtered, 0, $symbol_amount), ' ')) . '...';
 }
 
 /*
@@ -281,7 +281,7 @@ add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
 function sj_remove_type_attr($tag)
 {
-	return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
+  return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
 }
 
 /*

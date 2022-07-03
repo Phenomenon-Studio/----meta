@@ -310,7 +310,7 @@ Template name: Meta artist
     </div>
 </section>
 
-<?php get_template_part('templates/subscribe-form'); ?>
+<?php get_template_part('template-parts/subscribe-form'); ?>
 
 
 <?php include 'footer.php'; ?>
