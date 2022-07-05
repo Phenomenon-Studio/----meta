@@ -264,4 +264,109 @@ function truncate($string,$length=100,$append="&hellip;") {
   }
   return $string;
 }
+function new_custom_posts() {
+  /*
+  Post Type: Cases.
+  */
+  $labels = [
+    "name" => __( "Cases" ),
+    "singular_name" => __( "case" ),
+  ];
+  $args = [
+    "label" => __( "Cases" ),
+    "labels" => $labels,
+    "description" => "",
+    "public" => true,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => true,
+    "rest_base" => "",
+    "rest_controller_class" => "WP_REST_Posts_Controller",
+    "rest_namespace" => "wp/v2",
+    "has_archive" => false,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "delete_with_user" => false,
+    "exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "can_export" => false,
+    "rewrite" => [ "slug" => "case", "with_front" => true ],
+    "query_var" => true,
+    "menu_icon" => "dashicons-image-filter",
+    "supports" => [ "title", "editor", "thumbnail" ],
+    "show_in_graphql" => false,
+  ];
+  register_post_type( "case", $args );
+  /*
+  Post Type: Portfolio.
+  */
+  $labels = [
+    "name" => __( "Portfolio" ),
+    "singular_name" => __( "Portfolio" ),
+  ];
+  $args = [
+    "label" => __( "Portfolio" ),
+    "labels" => $labels,
+    "description" => "",
+    "public" => true,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => true,
+    "rest_base" => "",
+    "rest_controller_class" => "WP_REST_Posts_Controller",
+    "rest_namespace" => "wp/v2",
+    "has_archive" => false,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "delete_with_user" => false,
+    "exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "can_export" => false,
+    "rewrite" => [ "slug" => "portfolio", "with_front" => true ],
+    "query_var" => true,
+    "menu_icon" => "dashicons-portfolio",
+    "supports" => [ "title", "editor", "thumbnail" ],
+    "show_in_graphql" => false,
+  ];
+  register_post_type( "portfolio", $args );
+  /*
+  Post Type: Requests.
+  */
+  $labels = [
+    "name" => __( "Requests" ),
+    "singular_name" => __( "Request" ),
+  ];
+  $args = [
+    "label" => __( "Requests" ),
+    "labels" => $labels,
+    "description" => "",
+    "public" => false,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => true,
+    "rest_base" => "",
+    "rest_controller_class" => "WP_REST_Posts_Controller",
+    "rest_namespace" => "wp/v2",
+    "has_archive" => false,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "delete_with_user" => false,
+    "exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "can_export" => false,
+    "rewrite" => [ "slug" => "request", "with_front" => true ],
+    "query_var" => true,
+    "menu_icon" => "dashicons-email-alt",
+    "supports" => [ "title", "editor", "thumbnail" ],
+    "show_in_graphql" => false,
+  ];
+  register_post_type( "request", $args );
+}
+add_action( 'init', 'new_custom_posts' );
 ?>
