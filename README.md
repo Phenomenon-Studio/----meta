@@ -13,3 +13,4 @@ The stack and project description is described below.
 
 ## Project description
 
+For the ***meta project, we created a custom design for the corporate website. The website was created on WordPress with simple animations because the main attention on the website must be on custom 3D illustrations that were created for the project. The front-end part of the project was done using SCSS and JavaScript.
